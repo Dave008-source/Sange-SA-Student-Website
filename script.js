@@ -1,34 +1,20 @@
-// Replace with your GitHub App Client ID
-const clientId = 'YOUR_GITHUB_CLIENT_ID';
-const redirectUri = 'https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/';
-const scope = 'user:email'; // Request access to the user's public email
+document.getElementById('registration-form').addEventListener('submit', function(event) {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const course = document.getElementById('course').value;
+    const formStatus = document.getElementById('form-status');
 
-document.getElementById('github-login-button').addEventListener('click', () => {
-    // Construct the GitHub OAuth URL
-    const authUrl = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
-
-    // Redirect the user to GitHub
-    window.location.href = authUrl;
-});
-
-// Handle the redirect from GitHub
-window.addEventListener('load', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const code = urlParams.get('code');
-
-    if (code) {
-        console.log('Authorization code received:', code);
-        // In a real-world scenario, you would send this code to your server
-        // to exchange it for an access token.
-        // Since this is a static site, we'll demonstrate a simple "success" state.
-
-        // For a static site, you could use this code to fetch public user data
-        // but it's not a secure way to handle sensitive data.
-        // A server-side approach is required for full security.
-
-        alert('Registration with GitHub was successful!');
-
-        // Example: Clear the URL parameters to prevent re-triggering the logic
-        window.history.replaceState(null, '', window.location.pathname);
+    if (!name || !email || !course) {
+        formStatus.textContent = 'Please fill out all required fields.';
+        formStatus.style.color = 'red';
+        event.preventDefault(); // Prevent the form from submitting
+        return;
     }
+
+    // Display a success message after submission.
+    // For Formspree, the user will be redirected to a "thank you" page
+    // or a default success message. This part is mostly for local testing or custom form handlers.
+    // formStatus.textContent = 'Registration successful! Thank you.';
+    // formStatus.style.color = 'green';
+    // event.preventDefault(); // Uncomment this line if you're using a custom AJAX submission
 });
