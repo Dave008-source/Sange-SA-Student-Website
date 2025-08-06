@@ -8,21 +8,49 @@
 </head>
 <body>
     <header>
-        <h1>Sange Sa Student Registration</h1>
+        <h1>Sange Sa Academy</h1>
+        <p>Empowering the next generation of innovators.</p>
     </header>
 
     <main>
         <section class="registration-form">
-            <h2>Register for our program</h2>
-            <p>To apply, please log in with your GitHub account.</p>
-            <button id="github-login-button">
-                Register with GitHub
-            </button>
+            <h2>Student Registration</h2>
+            <p>Fill out the form below to apply for admission.</p>
+            <form id="registration-form" action="https://formspree.io/f/your_form_id" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="course">Desired Course:</label>
+                    <select id="course" name="course" required>
+                        <option value="">--Select a Course--</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Why do you want to join Sange Sa?</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+                <button type="submit">Register</button>
+                <p id="form-status"></p>
+            </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Sange Sa. All rights reserved.</p>
+        <p>&copy; 2025 Sange Sa Academy. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
