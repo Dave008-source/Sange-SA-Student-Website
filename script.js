@@ -7,14 +7,10 @@ document.getElementById('registration-form').addEventListener('submit', function
     if (!name || !email || !course) {
         formStatus.textContent = 'Please fill out all required fields.';
         formStatus.style.color = 'red';
-        event.preventDefault(); // Prevent the form from submitting
+        event.preventDefault(); // This line prevents the form from submitting and redirecting
         return;
     }
 
-    // Display a success message after submission.
-    // For Formspree, the user will be redirected to a "thank you" page
-    // or a default success message. This part is mostly for local testing or custom form handlers.
-    // formStatus.textContent = 'Registration successful! Thank you.';
-    // formStatus.style.color = 'green';
-    // event.preventDefault(); // Uncomment this line if you're using a custom AJAX submission
+    // The form will now submit and redirect to the welcome page automatically.
+    // No need for a success message here.
 });
