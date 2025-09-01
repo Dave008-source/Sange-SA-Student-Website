@@ -190,3 +190,13 @@ footer {
   width: 100px; /* Adjust this value to change the logo's width */
   height: auto; /* Maintains the logo's aspect ratio */
 }
+
+
+.sange-sa-logo {
+    fill: #0047AB; /* This is a specific shade of blue. Use your website's blue color code. */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: auto;
+}
