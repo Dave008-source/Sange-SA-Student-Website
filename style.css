@@ -215,7 +215,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('<img src="Sange SA.png" alt="Sange SA Logo" class="sange-sa-logo">);
+  background-image:(<img src="Sange SA.png" alt="Sange SA Logo" class="sange-sa-logo">);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%; /* Adjust as needed */
