@@ -223,3 +223,35 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
+
+/* CSS to hide the PDF list by default */
+.pdf-container.hidden {
+    display: none;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, max-height 0.5s ease-out;
+    padding: 0 15px; /* Add padding here so it's not hidden when active */
+}
+
+/* CSS to show the PDF list when active (JavaScript removes the 'hidden' class) */
+.pdf-container {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 15px;
+    opacity: 1;
+    max-height: 500px; /* Needs a defined max-height for the transition to work */
+}
+
+/* Optional styling for the button */
+.course-button {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
