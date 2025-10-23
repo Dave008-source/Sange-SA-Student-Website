@@ -255,3 +255,9 @@ body::before {
     cursor: pointer;
     margin-bottom: 15px;
 }
+
+
+/* New rule for white font color on the header/navbar */
+.navbar a {
+    color: white !important;
+}
